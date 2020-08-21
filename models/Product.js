@@ -52,10 +52,13 @@ const productSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
       },
+      averageCost: {
+        type:Number,
+      },
       createdAt: {
         type: Date,
         default: Date.now,
-      },
+      }
 })
 
 module.exports = mongoose.model("productSchema",productSchema)

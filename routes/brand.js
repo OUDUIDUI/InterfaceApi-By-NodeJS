@@ -4,7 +4,7 @@ const { getBrands,createBrand,getBrand,updateBrand,deleteBrand } = require('../c
 
 // 定向路由
 const productRouter = require("./product.js");
-router.use("/:BrandId/product",productRouter);
+router.use("/:brandId/product",productRouter);
 
 router.route('/').get(getBrands).post(createBrand)
 

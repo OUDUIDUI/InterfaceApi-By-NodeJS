@@ -4,7 +4,7 @@ const ErrorResponse = require('../utils/errResponse.js');
 const asyncHandler = require('../middleware/async.js')
 
 /**
- * @desc   获取所有商品数据
+ * @desc   获取所有品牌数据
  * @route  GET /api/v1/brand
  * @access public
  */
@@ -63,11 +63,11 @@ exports.getBrands = asyncHandler(async (req,res,next) =>{
     if(endIndex < total){
         pagination.next = {page:page+1, limit};
     }
-    res.status(200).json({success:true,count:brands.length,pagination,data:brands})
+    res.status(200).json({success:true,count:total,pagination,data:brands})
 })
 
 /**
- * @desc   创建商品数据
+ * @desc   创建品牌
  * @route  POST /api/v1/brand
  * @access public
  */
@@ -77,7 +77,7 @@ exports.createBrand = asyncHandler(async (req,res,next) =>{
 })  
 
 /**
- * @desc   获取单个商品数据
+ * @desc   获取单个品牌
  * @route  GET /api/v1/brand:id
  * @access public
  */
@@ -92,7 +92,7 @@ exports.getBrand = asyncHandler(async (req,res,next) =>{
 }) 
 
 /**
- * @desc   更新单个商品数据
+ * @desc   更新单个品牌
  * @route  PUT /api/v1/brand:id
  * @access public
  */
@@ -110,7 +110,7 @@ exports.updateBrand = asyncHandler(async (req,res,next) =>{
 }) 
 
 /**
- * @desc   删除单个商品数据
+ * @desc   删除单个品牌
  * @route  GET /api/v1/brand:id
  * @access public
  */

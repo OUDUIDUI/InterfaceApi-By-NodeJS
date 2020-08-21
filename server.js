@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
 const connectDB = require('./config/db.js');
+const errorHandler = require("./middleware/error.js")
 
 // 引入路由文件
 const product = require('./routes/product.js');
@@ -29,6 +30,9 @@ app.get("/",(req,res)=>{
 
 // 挂载路由节点
 app.use("/api/v1/product",product);
+
+// error中间件 一定要写在挂载路由节点之后
+app.use(errorHandler)
 
 // 监听接口
 const PORT = process.env.PORT || 3000;

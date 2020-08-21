@@ -1,9 +1,7 @@
 const express = require('express');
-const router = express.Router();
-const { getProducts,createProduct,getProduct,updateProduct,deleteProduct } = require('../controllers/product.js')
+const router = express.Router({mergeParams:true});   // 合并参数
+const {getProducts} = require("../controllers/products.js");
 
-router.route('/').get(getProducts).post(createProduct)
-
-router.route('/:id').get(getProduct).put(updateProduct).delete(deleteProduct)
+router.route('/').get(getProducts);
 
 module.exports = router;

@@ -22,15 +22,15 @@
   },
   {
     "_id": "5d7a514b5d2c12c7449be045",
-    "name": "米修在线",
-    "email": "missu@msu.com",
+    "name": "henry",
+    "email": "henry@henry.com",
     "role": "user",
     "password": "123456"
   },
   {
     "_id": "5d7a514b5d2c12c7449be046",
-    "name": "米斯特吴",
-    "email": "misterwu@msu.com",
+    "name": "wu",
+    "email": "wu@msu.com",
     "role": "visitor",
     "password": "123456"
   }

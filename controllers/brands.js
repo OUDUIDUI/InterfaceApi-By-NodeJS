@@ -1,14 +1,14 @@
 // 引入模型
-const ProductSchema = require('../models/Product.js');
+const BrandSchema = require('../models/Brand.js');
 const ErrorResponse = require('../utils/errResponse.js');
 const asyncHandler = require('../middleware/async.js')
 
 /**
  * @desc   获取所有商品数据
- * @route  GET /api/v1/product
+ * @route  GET /api/v1/brand
  * @access public
  */
-exports.getProducts = asyncHandler(async (req,res,next) =>{
+exports.getBrands = asyncHandler(async (req,res,next) =>{
     const reqQuery = {...req.query}
     // 清除关键字及值
     const removeFields = ["select","sort","page","limit"]; // 处理关键字
@@ -26,12 +26,11 @@ exports.getProducts = asyncHandler(async (req,res,next) =>{
     */
 
     let queryStr = JSON.stringify(reqQuery);
-    console.log(queryStr)
     queryStr=queryStr.replace(
         /\b(eq|gt|gte|lt|lte|in|ne|nin)\b/g,
         (match)=> `$${match}`);
 
-    let query = ProductSchema.find(JSON.parse(queryStr));
+    let query = BrandSchema.find(JSON.parse(queryStr)).populate("products");
     // 在query所有数据的基础上添加筛选条件
     if(req.query.select){
         const fields = req.query.select.split(",").join(" ");
@@ -51,10 +50,10 @@ exports.getProducts = asyncHandler(async (req,res,next) =>{
     const limit = parseInt(req.query.limit,10) || 2;
     const startIndex = (page - 1)*limit;
     const endIndex = page * limit;
-    const total = await ProductSchema.countDocuments();
+    const total = await BrandSchema.countDocuments();
     query.skip(startIndex).limit(limit);
 
-    const products = await query;
+    const brands = await query;
 
     // 分页返回值
     const pagination = {};
@@ -64,63 +63,64 @@ exports.getProducts = asyncHandler(async (req,res,next) =>{
     if(endIndex < total){
         pagination.next = {page:page+1, limit};
     }
-    res.status(200).json({success:true,count:products.length,pagination,data:products})
+    res.status(200).json({success:true,count:brands.length,pagination,data:brands})
 })
 
 /**
  * @desc   创建商品数据
- * @route  POST /api/v1/product
+ * @route  POST /api/v1/brand
  * @access public
  */
-exports.createProduct = asyncHandler(async (req,res,next) =>{
-    const product = await ProductSchema.create(req.body);
-    res.status(200).json({success:true,data:product})
+exports.createBrand = asyncHandler(async (req,res,next) =>{
+    const brand = await BrandSchema.create(req.body);
+    res.status(200).json({success:true,data:brand})
 })  
 
 /**
  * @desc   获取单个商品数据
- * @route  GET /api/v1/product:id
+ * @route  GET /api/v1/brand:id
  * @access public
  */
-exports.getProduct = asyncHandler(async (req,res,next) =>{
-    const product = await ProductSchema.findById(req.params.id);
-        if(!product){
+exports.getBrand = asyncHandler(async (req,res,next) =>{
+    const brand = await BrandSchema.findById(req.params.id);
+        if(!brand){
             return next(
                 new ErrorResponse(`Resource not found with id of ${req.params.id}`,404)
             );
         }
-        res.status(200).json({success:true,data:product})
+        res.status(200).json({success:true,data:brand})
 }) 
 
 /**
  * @desc   更新单个商品数据
- * @route  PUT /api/v1/product:id
+ * @route  PUT /api/v1/brand:id
  * @access public
  */
-exports.updateProduct = asyncHandler(async (req,res,next) =>{
-    const product = await ProductSchema.findByIdAndUpdate(req.params.id,req.body,{
+exports.updateBrand = asyncHandler(async (req,res,next) =>{
+    const brand = await BrandSchema.findByIdAndUpdate(req.params.id,req.body,{
         new:true,              // 返回更新好的数据
         runValidators:true     // 新数据是否验证
     });
-    if(!product){
+    if(!brand){
         return next(
             new ErrorResponse(`Resource not found with id of ${req.params.id}`,404)
         );
     }
-    res.status(200).json({success:true,data:product})
+    res.status(200).json({success:true,data:brand})
 }) 
 
 /**
  * @desc   删除单个商品数据
- * @route  GET /api/v1/product:id
+ * @route  GET /api/v1/brand:id
  * @access public
  */
-exports.deleteProduct = asyncHandler(async (req,res,next) =>{
-    const product = await ProductSchema.findByIdAndDelete(req.params.id);
-        if(!product){
-            return next(
-                new ErrorResponse(`Resource not found with id of ${req.params.id}`,404)
-            );
-        }
+exports.deleteBrand = asyncHandler(async (req,res,next) =>{
+    const brand = await BrandSchema.findById(req.params.id);
+    if(!brand){
+        return next(
+            new ErrorResponse(`Resource not found with id of ${req.params.id}`,404)
+        );
+    }
+    brand.remove();
     res.status(200).json({success:true,data:{}})
 }) 

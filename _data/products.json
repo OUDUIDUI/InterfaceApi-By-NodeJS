@@ -1,54 +1,149 @@
 [
   {
-    "_id": "5d713995b721c3bb38c1f5d0",
-    "user": "5d7a514b5d2c12c7449be045",
-    "name": "米修前端0基础训练营",
-    "description": "高中以上学历,有一些计算机基础知识,课程将会从最基础开始讲解,穿插实战巩固知识.最终达到企业的要求, 上岗工作!",
-    "website": "https://www.thenewstep.cn",
-    "phone": "17686668866",
-    "email": "27732357@qq.com",
-    "address": "四川省成都市武侯区来福士T2办公区7层",
-    "careers": ["前端开发", "小程序开发", "跨平台开发"],
-    "online": false,
-    "averageCost": 38
+    "title": "Acid-wash denim wrap dress",
+    "tags": ["服装","连衣裙","裙装"],
+    "brandId": "5f3f8ae129cef57268f6a46c",
+    "inStock": true,
+    "price": 1069
   },
   {
-    "_id": "5d713a66ec8f2b88b8f830b8",
-    "user": "5d7a514b5d2c12c7449be046",
-    "name": "米修Python0基础训练营",
-    "description": "本科以上学历,懂数据结构,理科优先,有一定的逻辑观念,有一定计算机功底,课程会从入门讲解,结合实战项目,最终达到企业的要求.",
-    "website": "https://www.thenewstep.cn",
-    "phone": "17686668866",
-    "email": "27732357@qq.com",
-    "address": "四川省成都市武侯区来福士T2办公区7层",
-    "careers": ["前端开发", "数据挖掘", "人工智能"],
-    "online": false,
-    "averageCost": 58
+    "title": "Tiger’s eye-print button-down cotton midi skirt",
+    "tags": ["服装","半身裙","裙装"],
+    "brandId": "5f3f8ae129cef57268f6a46c",
+    "inStock": false,
+    "price": 679
   },
   {
-    "_id": "5d725a037b292f5f8ceff787",
-    "user": "5c8a1d5b0190b214360dc031",
-    "name": "米修后端0基础训练营",
-    "description": "高中以上学历,有一些计算机基础知识,课程将会从最基础开始讲解,穿插实战巩固知识.最终达到企业的要求, 上岗工作!",
-    "website": "https://www.thenewstep.cn",
-    "phone": "17686668866",
-    "email": "27732357@qq.com",
-    "address": "四川省成都市武侯区来福士T2办公区7层",
-    "careers": ["前端开发", "后端开发", "数据分析"],
-    "online": true,
-    "averageCost": 68
+    "title": "Crocodile-effect leather Western boots",
+    "tags": ["靴子","鞋类"],
+    "brandId": "5f3f8ae129cef57268f6a46c",
+    "inStock": true,
+    "price": 1299
   },
   {
-    "_id": "5d725a1b7b292f5f8ceff788",
-    "user": "5c8a1d5b0190b214360dc032",
-    "name": "米修Golang0基础训练营",
-    "description": "本科以上学历,懂数据结构,理科优先,有一定的逻辑观念,有一定计算机功底,课程会从入门讲解,结合实战项目,最终达到企业的要求.",
-    "website": "https://www.thenewstep.cn",
-    "phone": "17686668866",
-    "email": "27732357@qq.com",
-    "address": "四川省成都市武侯区来福士T2办公区7层",
-    "careers": ["后端开发", "前端开发", "数据分析", "人工智能"],
-    "online": true,
-    "averageCost": 98
+    "title": "褶饰花卉印花有机纯棉府绸迷你连衣裙",
+    "tags": ["服装","连衣裙","半身裙","裙装"],
+    "brandId": "5f3f8ae129cef57268f6a46c",
+    "inStock": true,
+    "price": 1389
+  },
+  {
+    "title": "Maison Margiela 夹克",
+    "tags": ["服装","夹克","外套"],
+    "brandId": "5f3f8ae129cef57268f6a46d",
+    "inStock": true,
+    "price": 3139
+  },
+  {
+    "title": "Knee-length dress",
+    "tags": ["服装","连衣裙","裙装"],
+    "brandId": "5f3f8ae129cef57268f6a46d",
+    "inStock": true,
+    "price": 1389
+  },
+  {
+    "title": "Scarves",
+    "tags": ["配饰"],
+    "brandId": "5f3f8ae129cef57268f6a46d",
+    "inStock": true,
+    "price": 879
+  },
+  {
+    "title": "油漆飞溅效果板鞋",
+    "tags": ["运动鞋","鞋类"],
+    "brandId": "5f3f8ae129cef57268f6a46d",
+    "inStock": true,
+    "price": 3209
+  },
+  {
+    "title": "黑色徽标钱包",
+    "tags": ["配饰","包袋","钱包"],
+    "brandId": "5f3f8ae129cef57268f6a46e",
+    "inStock": true,
+    "price": 899
+  },
+  {
+    "title": "Valentino 夹克",
+    "tags": ["服装","夹克","外套"],
+    "brandId": "5f3f8ae129cef57268f6a46e",
+    "inStock": false,
+    "price": 2469
+  },
+  {
+    "title": "黑色扣环腰带",
+    "tags": ["配饰","腰带"],
+    "brandId": "5f3f8ae129cef57268f6a46e",
+    "inStock": true,
+    "price": 1919
+  },
+  {
+    "title": "肩膀纽扣套衫",
+    "tags": ["服装","针织衫"],
+    "brandId": "5f3f8ae129cef57268f6a46e",
+    "inStock": true,
+    "price": 2339
+  },
+  {
+    "title": "双G扣皮带",
+    "tags": ["配饰","腰带"],
+    "brandId": "5f3f8ae129cef57268f6a46f",
+    "inStock": true,
+    "price": 2719
+  },
+  {
+    "title": "罗缎边饰金属感天鹅绒提花面料西装式外套",
+    "tags": ["西装上衣","服装","夹克","外套","西装"],
+    "brandId": "5f3f8ae129cef57268f6a46f",
+    "inStock": true,
+    "price": 29859
+  },
+  {
+    "title": "Ophidia GG卡包",
+    "tags": ["配饰","包袋","钱包"],
+    "brandId": "5f3f8ae129cef57268f6a46f",
+    "inStock": true,
+    "price": 1359
+  },
+  {
+    "title": "logo编织磨边腰带",
+    "tags": ["配饰","腰带"],
+    "brandId": "5f3f8ae129cef57268f6a46f",
+    "inStock": true,
+    "price": 1039
+  },
+  {
+    "title": "迷彩印花休闲夹克",
+    "tags": ["服装","夹克","外套"],
+    "brandId": "5f3f8ae129cef57268f6a470",
+    "inStock": true,
+    "price": 3589
+  },
+  {
+    "title": "翻领牛仔外套",
+    "tags": ["服装","夹克","外套"],
+    "brandId": "5f3f8ae129cef57268f6a470",
+    "inStock": true,
+    "price": 1359
+  },
+  {
+    "title": "运动休闲鞋",
+    "tags": ["运动鞋","鞋类","运动休闲鞋"],
+    "brandId": "5f3f8ae129cef57268f6a470",
+    "inStock": true,
+    "price": 4449
+  },
+  {
+    "title": "徽标logo腰带",
+    "tags": ["配饰","腰带"],
+    "brandId": "5f3f8ae129cef57268f6a470",
+    "inStock": false,
+    "price": 549
+  },
+  {
+    "title": "高帮休闲运动鞋",
+    "tags": ["运动鞋","鞋类","运动休闲鞋"],
+    "brandId": "5f3f8ae129cef57268f6a470",
+    "inStock": true,
+    "price": 1729
   }
 ]

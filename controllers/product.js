@@ -1,10 +1,20 @@
+// 引入模型
+const ProductSchema = require('../models/Product.js');
+const { findByIdAndUpdate } = require('../models/Product.js');
+
 /**
  * @desc   获取所有商品数据
  * @route  GET /api/v1/product
  * @access public
  */
-exports.getProducts = (req,res,next) =>{
-    res.status(200).json({success:true,msg:"获取所有商品数据"})
+exports.getProducts = async (req,res,next) =>{
+    try {
+        const products = await ProductSchema.find();
+        res.status(200).json({success:true,data:products})
+    } catch (error) {
+        res.status(400).json({success:false,error:error})
+    }
+    
 }
 
 /**
@@ -12,8 +22,13 @@ exports.getProducts = (req,res,next) =>{
  * @route  POST /api/v1/product
  * @access public
  */
-exports.createProduct = (req,res,next) =>{
-    res.status(200).json({success:true,msg:"创建商品数据"})
+exports.createProduct =  async (req,res,next) =>{
+    try{
+        const product = await ProductSchema.create(req.body);
+        res.status(200).json({success:true,data:product})
+    }catch(error){
+        res.status(400).json({success:false,error:error})
+    }
 }
 
 /**
@@ -21,8 +36,20 @@ exports.createProduct = (req,res,next) =>{
  * @route  GET /api/v1/product:id
  * @access public
  */
-exports.getProduct = (req,res,next) =>{
-    res.status(200).json({success:true,msg:`获取货号为${req.params.id}的商品数据`})
+exports.getProduct = async (req,res,next) =>{
+    try {
+        const product = await ProductSchema.findById(req.params.id);
+        if(!product){
+            return res.status(400).json({success:false,msg:"找不到该商品"})
+        }
+
+        res.status(200).json({success:true,data:product})
+    } catch (error) {
+        // res.status(400).json({success:false,error:error})
+        next(error);
+
+    }
+
 }
 
 /**
@@ -30,8 +57,19 @@ exports.getProduct = (req,res,next) =>{
  * @route  PUT /api/v1/product:id
  * @access public
  */
-exports.updateProduct = (req,res,next) =>{
-    res.status(200).json({success:true,msg:`更新货号为${req.params.id}的商品数据`})
+exports.updateProduct = async (req,res,next) =>{
+    try {
+        const product = await ProductSchema.findByIdAndUpdate(req.params.id,req.body,{
+            new:true,              // 返回更新好的数据
+            runValidators:true     // 新数据是否验证
+        });
+        if(!product){
+            return res.status(400).json({success:false,msg:"找不到该商品"})
+        }
+        res.status(200).json({success:true,data:product})
+    } catch (error) {
+        res.status(400).json({success:false,error:error})
+    }
 }
 
 /**
@@ -39,6 +77,14 @@ exports.updateProduct = (req,res,next) =>{
  * @route  GET /api/v1/product:id
  * @access public
  */
-exports.deleteProduct = (req,res,next) =>{
-    res.status(200).json({success:true,msg:`删除货号为${req.params.id}的商品数据`})
+exports.deleteProduct = async (req,res,next) =>{
+    try {
+        const product = await ProductSchema.findByIdAndDelete(req.params.id);
+        if(!product){
+            return res.status(400).json({success:false,msg:"找不到该商品"})
+        }
+        res.status(200).json({success:true,data:{}})
+    } catch (error) {
+        res.status(400).json({success:false,error:error})
+    }
 }

@@ -16,8 +16,12 @@ connectDB();
 
 const app = express();
 
+// 配置body解析
+app.use(express.json())
+
 // 创建中间件
 app.use(morgan("dev"));
+
 
 app.get("/",(req,res)=>{
     res.status(200).json({success:true,msg:"HelloWorld"});
@@ -26,6 +30,7 @@ app.get("/",(req,res)=>{
 // 挂载路由节点
 app.use("/api/v1/product",product);
 
+// 监听接口
 const PORT = process.env.PORT || 3000;
 
 const server = app.listen(

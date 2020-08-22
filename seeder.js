@@ -9,6 +9,8 @@ dotenv.config({
 
 const BrandSchema = require('./models/Brand.js');
 const ProductSchema = require('./models/Product.js');
+const UserSchema = require('./models/User.js');
+const ReviewSchema = require("./models/Review.js")
 
 // 连接数据库
 mongoose.connect(process.env.NET_MONGO_URL,{
@@ -21,12 +23,16 @@ mongoose.connect(process.env.NET_MONGO_URL,{
 // 读取本地json数据
 const brands = JSON.parse(fs.readFileSync(`${__dirname}/_data/brands.json`,"utf-8"));
 const products = JSON.parse(fs.readFileSync(`${__dirname}/_data/products.json`,"utf-8"));
+const users = JSON.parse(fs.readFileSync(`${__dirname}/_data/users.json`,"utf-8"));
+const reivews = JSON.parse(fs.readFileSync(`${__dirname}/_data/reviews.json`,"utf-8"));
 
 // 导入数据到数据库
 const importData = async() =>{
     try {
         await BrandSchema.create(brands);
         await ProductSchema.create(products);
+        await UserSchema.create(users);
+        await ReviewSchema.create(reivews);
         console.log("数据存储成功".green.inverse);
         process.exit();
     } catch (error) {
@@ -39,6 +45,8 @@ const deleteData = async() =>{
     try {
         await BrandSchema.deleteMany();
         await ProductSchema.deleteMany();
+        await UserSchema.deleteMany();
+        await ReviewSchema.deleteMany();
         console.log("数据删除成功".green.inverse);
         process.exit();
     } catch (error) {

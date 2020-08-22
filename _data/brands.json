@@ -4,35 +4,40 @@
     "name": "Ganni",
     "description": "GANNI是一个极具现代魅力的品牌，堪称强劲的新晋时尚力量。品牌总部设于哥本哈根，由Ditte Reffstrup与Nicolaj Reffstrup夫妇共同运营，二人运用品牌鲜明的特点，致力于为每位女性提供个性的时尚单品。 GANNI可谓是北欧风格2.0版本，充满了具有北欧格调且别出心裁的细节。GANNI的使命简洁明了：为衣橱添置便于穿搭的必备单品。其设计充满俏皮精神，以趣致花卉、个性印花、荷叶边饰等征服了众多时尚达人的心。其中尤其以飘逸连衣裙、个性T恤与短靴备受追捧。",
     "website": "https://www.ganni.com/en/home",
-    "country": "丹麦"
+    "country": "丹麦",
+    "user":"5d7a514b5d2c12c7449be042"
   },
   {
     "_id": "5f3f8ae129cef57268f6a46d",
     "name": "Maison Margiela",
     "description": "Maison Margiela是比利时一个设计师品牌。Maison Margiela最开始品牌名字是Maison Martin Margiela，1988年创立，后来改名为Maison Margiela。创始人马丁·马吉拉Martin Margiela，绝对是时尚界的殿堂级传奇人物之一。1997～2003年，Margiela兼任爱马仕女装创意总监。在此期间 Margiela 为爱马仕留下许多令人难忘的设计。许多人认为，当年Margiela的爱马仕设计，再也没有被继任设计师们超越。每套设计那种淡然、优雅，呼之欲出的气质……静静站在那里就能让人心颤的美。",
     "website": "https://www.maisonmargiela.com/countries/index",
-    "country": "法国"
+    "country": "法国",
+    "user":"5d7a514b5d2c12c7449be042"
   },
   {
     "_id": "5f3f8ae129cef57268f6a46e",
     "name": "Valentino",
     "description": "富丽华贵、美艳灼人是VALENTINO(瓦伦蒂诺/华伦天奴)品牌的特色，VALENTINO喜欢用最纯的颜色，鲜艳的红色可以说是他的标准色，做工十分考究，从整体到对每一个小细节都做得尽善尽美。VALENTINO是豪华、奢侈的生活方式象征，极受追求十全十美的名流忠爱。精美绝伦的剪裁，高级进口的面料和华贵奢侈的风格，黑色加上金色的刺绣，透出缕缕神秘的含蓄之美。尤其是他那“前所未有的女性化、充满人性和细致”，贴身的线条配上贴身的针脚、裙长不过膝，突出身材，晚礼服的长裤宽大的流线，充分显现了女性妩媚的味道。富丽华贵、美艳灼人是VALENTINO品牌的特色。VALENTINO是全球高级定制和高级成衣最顶级的奢侈品品牌。说起VALENTINO人们自然会感受到这个名字所具有的罗马贵族气息。VALENTINO代表的是一种宫廷式的奢华，高调之中却隐藏深邃的冷静，从世纪六十年代以来一直都是意大利的国宝级品牌。",
     "website": "https://www.valentino.cn/",
-    "country": "意大利"
+    "country": "意大利",
+    "user":"5d7a514b5d2c12c7449be044"
   },
   {
     "_id": "5f3f8ae129cef57268f6a46f",
     "name": "Gucci",
     "description": "古驰 (Gucci) 是意大利殿堂级时尚品牌。古驰 (Gucci) 品牌作为古驰集团 (Gucci Group) 最享有盛名的时装品牌，以高档、豪华、性感而闻名于世，古驰 (Gucci) 的“双G”logo，以“身份与财富之象征”的品牌形象，成为富有的上流社会的消费宠儿。古驰集团 (Gucci Group) 1999年被Kering集团收购。 意大利皮具手工艺人古驰欧·古驰 (Guccio Gucci) 先生于1921年创立古驰 (Gucci) 品牌。1938年Gucci先生于意大利佛罗伦萨Via Condotti开设首间古驰 (Gucci) 专门店，开始其时装霸业。一如大部分国际名牌，古驰 (Gucci) 的崛起也要感谢明星效应。60年代的好莱坞明星多次被拍摄到用古驰 (Gucci) 的手袋，间接为古驰 (Gucci) 作了宣传。当中捧场者包括著名好莱坞影星奥黛丽·赫本及当时的美国第一夫人杰奎琳·肯尼迪 (Jackie Kennedy)。由于杰奎琳·肯尼迪经常采用古驰 (Gucci) 手袋，此款古驰 (Gucci) 手袋更被冠以“Jackie”的名字。",
     "website": "https://www.gucci.cn/zh/",
-    "country": "意大利"
+    "country": "意大利",
+    "user":"5d7a514b5d2c12c7449be042"
   },
   {
     "_id": "5f3f8ae129cef57268f6a470",
     "name": "Off White",
     "description": "OFF-WHITE(OffWhite/Off White)由芝加哥潮流店铺RSVP Gallery创办人Virgil Abloh创立。OFF-WHITE时尚品牌植根于现代文化品味，用一个特定的观点集合不同季节的男女服饰，改变着人们的生活方式。OFF-WHITE虽然不是历史悠久的大牌，却在短短几年内成为众多名人、艺人的最爱的潮牌之一，出镜率相当之高，对OFF-WHITE的印象值自然也在无形中提升了！由于创办者Virgil Abloh的独到见解，使得OFF-WHITE的服饰跳脱季节框架，在一场Show上，男模可以穿着透视T-shirt与短裤再搭上长大衣，却不会让观众感到有任何疑虑。OFF-WHITE是一个相当年轻的品牌，除了服饰之外甚至推出了家具等产品，而所有商品都依循着一个概念，它能够适应每一季而不受到约束与限制。",
     "website": "https://www.off---white.com/en-us",
-    "country": "美国"
+    "country": "美国",
+    "user":"5d7a514b5d2c12c7449be042"
   }
 
 ]

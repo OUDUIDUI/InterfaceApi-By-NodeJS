@@ -2,7 +2,6 @@ const ProductSchema = require('../models/Product.js');
 const BrandSchema = require('../models/Brand.js');
 const ErrorResponse = require('../utils/errResponse.js');
 const asyncHandler = require('../middleware/async.js');
-const e = require('express');
 
 /**
  * @desc   获取所有商品
@@ -43,7 +42,6 @@ exports.getProduct = asyncHandler(async (req,res,next) =>{
  * @access private
  */
 exports.addProduct = asyncHandler(async (req,res,next) =>{
-    console.log(req.params);
     const brand = await BrandSchema.findById(req.params.brandId);
     if(!brand){
         // 查不到对应品牌
@@ -52,6 +50,8 @@ exports.addProduct = asyncHandler(async (req,res,next) =>{
         );
     }
 
+    req.body.user = req.user.id;
+    req.body.brand = req.params.brandId;
     const product = await ProductSchema.create(req.body)
 
     res.status(200).json({success:true,data:product})

@@ -24,6 +24,11 @@ const brandSchema = new mongoose.Schema({
     required: [true, "请填写品牌所在地"],
     maxlength: [50, "品牌所在地不能超过50个字"],
   },
+  user: {
+    type: mongoose.Schema.ObjectId,
+    ref: "User",
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

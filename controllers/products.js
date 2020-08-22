@@ -11,57 +11,12 @@ const e = require('express');
  * @access public
  */
 exports.getProducts = asyncHandler(async (req,res,next) =>{
-    const reqQuery = {...req.query}
-    // 清除关键字及值
-    const removeFields = ["select","sort","page","limit"]; // 处理关键字
-    removeFields.forEach((params)=> delete reqQuery[params]);
-    let queryStr = JSON.stringify(reqQuery);
-    queryStr=queryStr.replace(
-        /\b(eq|gt|gte|lt|lte|in|ne|nin)\b/g,
-        (match)=> `$${match}`);
-
-    let query;
     if(req.params.brandId){
-        query = ProductSchema.find({brandId:req.params.brandId,...JSON.parse(queryStr)});
+        const products = await ProductSchema.find({brandId:req.params.brandId});
+        res.status(200).json({success:true,count:products.length,data:products})
     }else{
-        query = ProductSchema.find(JSON.parse(queryStr)).populate({   // 关联数据
-            path:"brandId",
-            select:"name description"
-        });
+        res.status(200).json(res.advancedResults);
     }
-
-    // 在query所有数据的基础上添加筛选条件
-    if(req.query.select){
-        const fields = req.query.select.split(",").join(" ");
-        query = query.select(fields);
-    }
-    // 处理sort排序
-    if(req.query.sort){
-        const sortBy = req.query.sort.split(",").join(" ");
-        query = query.sort(sortBy);
-    }else{
-        // 默认排序
-        query = query.sort("createAt");
-    }
-
-    // 分页
-    const page = parseInt(req.query.page,10) || 1;
-    const limit = parseInt(req.query.limit,10) || 2;
-    const startIndex = (page - 1)*limit;
-    const endIndex = page * limit;
-    const total = await ProductSchema.countDocuments();
-    query.skip(startIndex).limit(limit);
-
-    const products = await query;
-    // 分页返回值
-    const pagination = {};
-    if(startIndex > 0){
-        pagination,prev = {page:page -1,limt};
-    }
-    if(endIndex < total){
-        pagination.next = {page:page+1, limit};
-    }
-    res.status(200).json({success:true,count:total,pagination,data:products})
 })
 
 /**

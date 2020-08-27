@@ -1,5 +1,5 @@
 # NodeJS 搭建接口文档
-![interfaceApi](./_data/interfaceApi.png)
+![interfaceApi](https://repository-images.githubusercontent.com/288929395/69e1cb00-e549-11ea-81a1-9632ae9a0468)
 ### 项目介绍
 #### 通过框架快速搭建接口
 该项目使用Express框架搭建API接口，并且使用jwt令牌生成和验证，bcryptjs密码加密等模块，使接口更健壮。
